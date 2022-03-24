@@ -47,19 +47,19 @@ let myView props children =
     button (OnClick (fun _ -> window.alert("I'm a real component!")) :: Class "shiny" :: props) children
 
 let customizedRender source =
-	Markdown.render (source, [
-		// Adds a replacement for the `&le;` (≤) HTML symbol
-		ParsingOption.namedCodesToUnicode [ "le", "\u2264" ]
-		// Defines replacements for tags
-		ParsingOption.overrides [
-			// h2 (##) will be replaced with h4 with a custom class
-			Override.tag ("h2", [ "className", "red" ], h4)
-			// The tag AnotherComponent will be mapped onto a React component defined beforehand
-			// The props object is passed to the component
-			Override.tag ("AnotherComponent", AnotherComponent)
-			// The tag MyComponent will be mapped onto a view function defined beforehand
-			// Props and children are passed to the function
-			Override.tag ("MyComponent", myView)
-		]
-	])
+    Markdown.render (source, [
+        // Adds a replacement for the `&le;` (≤) HTML symbol
+        ParsingOption.namedCodesToUnicode [ "le", "\u2264" ]
+        // Defines replacements for tags
+        ParsingOption.overrides [
+            // h2 (##) will be replaced with h4 with a custom class
+            Override.tag ("h2", [ "className", "red" ], h4)
+            // The tag AnotherComponent will be mapped onto a React component defined beforehand
+            // The props object is passed to the component
+            Override.tag ("AnotherComponent", AnotherComponent)
+            // The tag MyComponent will be mapped onto a view function defined beforehand
+            // Props and children are passed to the function
+            Override.tag ("MyComponent", myView)
+        ]
+    ])
 ```
