@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "dotnet fable watch ./Fable.MarkdownToJsx.Docs --run webpack serve",
+        "buildDocs": "dotnet fable ./Fable.MarkdownToJsx.Docs --run webpack --mode production"
+    },
+    "devDependencies": {
+        "html-webpack-plugin": "^5.0.0",
+        "markdown-to-jsx": "^7.1.7",
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0",
+        "terser-webpack-plugin": "^5.3.1",
+        "webpack": "^5.0.0",
+        "webpack-cli": "^4.0.0",
+        "webpack-dev-server": "^4.0.0"
+    }
+}

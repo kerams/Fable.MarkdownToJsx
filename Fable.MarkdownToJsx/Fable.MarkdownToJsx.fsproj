@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+		<Version>1.0.0</Version>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageId>Fable.MarkdownToJsx</PackageId>
+		<Authors>kerams</Authors>
+		<Description>Fable bindings for markdown-to-jsx</Description>
+		<RepositoryUrl>https://github.com/kerams/Fable.MarkdownToJsx</RepositoryUrl>
+		<PackageProjectUrl>https://kerams.github.io/Fable.MarkdownToJsx/</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/kerams/Fable.MarkdownToJsx/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageTags>fsharp;fable;markdown</PackageTags>
+    </PropertyGroup>
+	<PropertyGroup>
+		<NpmDependencies>
+			<NpmPackage Name="markdown-to-jsx" Version="gte 7.1.0 lt 8.0" ResolutionStrategy="Max" />
+		</NpmDependencies>
+	</PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Markdown.fs" />
+    </ItemGroup>
+	<ItemGroup>
+		<Content Include="*.fsproj; *.fs; *.js;" Exclude="**\*.fs.js" PackagePath="fable/" />
+	</ItemGroup>
+    <ItemGroup>
+		<PackageReference Update="FSharp.Core" Version="4.7.2" />
+		<PackageReference Include="Fable.Core" Version="3.2.9" />
+      <PackageReference Include="Fable.React" Version="7.0.1" />
+    </ItemGroup>
+</Project>

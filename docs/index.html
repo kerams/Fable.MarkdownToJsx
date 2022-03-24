@@ -1,0 +1,193 @@
+<!doctype html><html><head><title>Fable.MarkdownToJsx</title><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*, *::before, *::after {
+		box-sizing: border-box;
+		outline-color: rgba(255, 255, 255, 0.5);
+	}
+
+	html, body, #a, main {
+		margin: 0;
+		min-height: 100vh;
+	}
+	html {
+		background: #222;
+		color: #fefefe;
+		font-family: 'Source Sans Pro', Helvetica Neue, Helvetica, sans-serif;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 1rem;
+	}
+	h1 {
+		font-size: 2rem;
+	}
+	h2 {
+		font-size: 1.8rem;
+	}
+	h3 {
+		font-size: 1.6rem;
+	}
+	h4 {
+		font-size: 1.4rem;
+	}
+	h5 {
+		font-size: 1.2rem;
+	}
+	h6 {
+		font-size: 1rem;
+	}
+	a {
+		color: rgba(255, 255, 255, 0.5);
+		transition: color 200ms ease;
+		
+	}
+	a:hover, a:focus {
+		color: rgba(255, 255, 255, 0.75);
+	}
+	code {
+		background: rgba(255, 255, 255, 0.1);
+		display: inline-block;
+		padding: 0 2px;
+	}
+	pre code {
+		border: 0;
+		display: block;
+		padding: 1em;
+	}
+	main {
+		display: flex;
+		flex-direction: column;
+		padding: 3rem 1.5rem 0;
+		margin: 0;
+	}
+
+	table {
+	  display: block;
+	  width: 100%;
+	  overflow: auto;
+	}
+
+	table th {
+	  font-weight: 600;
+	}
+
+	table td, table th {
+	  padding: 6px 13px;
+	  border: 1px solid #7a7a7a;
+	}
+
+	table tr {
+	  background-color: #333;
+	  border-top: 1px solid #c6cbd1;
+	}
+
+	table tr:nth-child(2n) {
+	  background-color: #222121;
+	}
+
+	@media all and (min-width: 1024px) {
+		main {
+			padding: 3rem;
+		}
+	}
+
+	.shiny {
+		background: #444;
+		color: #ddd;
+		cursor: pointer;
+		font: inherit;
+		transition: background 200ms ease;
+	}
+
+	.shiny:hover, .shiny:focus {
+		background: #222;
+	}
+
+	.shiny:active {
+		background: #000;
+	}
+
+	.demo {
+		display: flex;
+		flex-grow: 1;
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
+	}
+
+	@media all and (min-width: 1024px) {
+		.demo {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	@media all and (max-width: 500px) {
+		.demo {
+			flex-direction: column;
+		}
+	}
+
+	.md {
+		flex: 0 0 50%;
+		padding: 1em;
+		background: rgba(255, 255, 255, 0.05);
+		border: 0;
+		color: inherit;
+		position: sticky;
+		top: 0;
+		font-family: 'Source Code Pro', Consolas, Monaco, monospace;
+		font-size: inherit;
+		max-height: 100vh;
+	}
+
+	@media all and (max-width: 500px) {
+		.md {
+			height: 300px;
+			position: relative;
+		}
+	}
+
+	.compiled {
+		flex: 0 0 50%;
+		padding: 1em;
+		padding-left: 2rem;
+		padding-right: 1rem;
+		overflow: auto;
+		overflow-x: hidden;
+	}
+
+	header {
+		flex-shrink: 0;
+		margin-bottom: 2em;
+		text-align: center;
+	}
+
+	header img {
+		height: 100px;
+	}
+
+	header > p {
+		font-size: 18px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 60vw;
+	}
+
+	header > p > h1, header > p > h2 {
+		font: inherit;
+	}
+
+	@media all and (max-width: 500px) {
+		header > p {
+			max-width: none;
+		}
+	}
+
+	@media all and (max-width: 1023px) {
+		header > p > h1, header > p > h2 {
+			display: block;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	.red {
+		color: red
+	}</style><script defer="defer" src="a.js"></script></head><body><div id="a"></div></body></html>
