@@ -14,7 +14,7 @@ type Override =
     static member inline internal childrenPropsSpread (_f: 'a -> #seq<ReactElement> -> ReactElement): obj = jsNative
 
     static member inline tag (tag: string, replacement: 'props -> ReactElement): IOverride = !!(tag, replacement)
-    static member inline tag (tag: string, replacement: #seq<Props.IHTMLProp> -> #seq<ReactElement> -> ReactElement): IOverride = !!(tag, Override.childrenPropsSpread replacement)
+    static member inline tag (tag: string, replacement: #seq<IHTMLProp> -> #seq<ReactElement> -> ReactElement): IOverride = !!(tag, Override.childrenPropsSpread replacement)
     
     static member inline tag (tag: string, props: seq<string * string>, replacement: 'props -> ReactElement): IOverride =
         !!(tag, {|
@@ -28,13 +28,13 @@ type Override =
             props = createObj props
         |})
 
-    static member inline tag (tag: string, props: seq<string * string>, replacement: #seq<Props.IHTMLProp> -> #seq<ReactElement> -> ReactElement): IOverride =
+    static member inline tag (tag: string, props: seq<string * string>, replacement: #seq<IHTMLProp> -> #seq<ReactElement> -> ReactElement): IOverride =
         !!(tag, {|
             ``component`` = Override.childrenPropsSpread replacement
             props = createObj !!props
         |})
 
-    static member inline tag (tag: string, props: seq<string * obj>, replacement: #seq<Props.IHTMLProp> -> #seq<ReactElement> -> ReactElement): IOverride =
+    static member inline tag (tag: string, props: seq<string * obj>, replacement: #seq<IHTMLProp> -> #seq<ReactElement> -> ReactElement): IOverride =
         !!(tag, {|
             ``component`` = Override.childrenPropsSpread replacement
             props = createObj props
@@ -57,7 +57,7 @@ type Markdown =
     static member inline internal reactElement (_name: string) (_props: 'a): ReactElement = import "createElement" "react"
 
     /// Render markdown text with customized parsing options
-    static member inline render (md, options: seq<IParsingOption>) = Markdown.reactElement (importDefault "markdown-to-jsx") {| options = createObj !!options; children = str md |}
-
+    static member inline render (md: string, options: seq<IParsingOption>) = Markdown.reactElement (importDefault "markdown-to-jsx") {| options = createObj !!options; children = md |}
+   
     /// Render markdown text with default parsing options
-    static member inline render md = ReactBindings.React.createElement (importDefault "markdown-to-jsx", null, [ str md ])
+    static member inline render (md: string) = ReactBindings.React.createElement (importDefault "markdown-to-jsx", null, [ !!md ])
