@@ -9,7 +9,7 @@
 		<RepositoryUrl>https://github.com/kerams/Fable.MarkdownToJsx</RepositoryUrl>
 		<PackageProjectUrl>https://kerams.github.io/Fable.MarkdownToJsx/</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageTags>fsharp;fable;markdown</PackageTags>
+		<PackageTags>fsharp;fable;fable-binding;fable-javascript;markdown</PackageTags>
     </PropertyGroup>
 	<PropertyGroup>
 		<NpmDependencies>
